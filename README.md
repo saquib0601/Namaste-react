@@ -63,3 +63,7 @@ import {component} from "path"
 
 res-container have 7 rest Card when we filter
 Then it will create a virtaul DOM(its is a representation of actual DOM)
+
+# 2 types of routing
+- Client Side Routing - when we use link tag ( because all the component already loaded), thatshwy react is single page website 
+- Server Side Routing - when we use anchor tag
