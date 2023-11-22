@@ -10,10 +10,10 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <div className="header">
+        <div className="flex">
             <div className="logo-container">
                 <img
-                    className="logo"
+                    className="w-2"
                     src={LOGO_URL}/>
             </div>
             <div className="nav-items">
