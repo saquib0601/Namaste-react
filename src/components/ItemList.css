@@ -1,0 +1,27 @@
+.itemListHeader {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.description {
+    color : grey;
+}
+.namePrice{
+    color : grey;
+}
+.imageClass {
+    width: 170px;
+}
+.addItem {
+
+}
+.imageDiv {
+ width: 24%;
+ /* padding: 30px */
+}
+.mainDivForName{
+    width: 74%
+}

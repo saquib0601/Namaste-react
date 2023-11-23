@@ -1,9 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react"; /* This is named export */
+import { useContext, useEffect, useState } from "react"; /* This is named export */
 import Shimmer from "./Shimmer"; /* This is default export */
 import { swiggy_api_URL } from "../utils/constants.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+import UserContext from "../utils/UserContext.js";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
@@ -75,6 +76,9 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
 
+  // below code is form input tag, when we change the value its changing the whole username with the use of userContext
+  // const {loggedInUser, setUserName} = useContext(UserContext);
+
   if (onlineStatus === false) return (<h1>Your are offline, please check your internet connection</h1>)
 
   // if allRestaurants is empty don't render restaurants cards
@@ -101,6 +105,13 @@ const Body = () => {
           Search
         </button>
       </div>
+
+      {/* // below code is form input tag, when we change the value its changing the whole username with the use of userContext */}
+      {/* <div>
+          <label className="labelDivBody">UserName:</label>
+          <input className="inputDivBody" value={loggedInUser} onChange={(e)=> setUserName(e.target.value)}/>
+      </div> */}
+      
       {errorMessage && <div className="error-container">{errorMessage}</div>}
 
       {/* if restaurants data is not fetched then display Shimmer UI after the fetched data display restaurants cards */}

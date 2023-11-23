@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { IMG_CDN_URL } from "../utils/constants.js"
+import UserContext from "../utils/UserContext.js";
 
 // Restaurant card component: Image, name, cuisine
 const RestaurantCard = ({
@@ -10,6 +12,11 @@ const RestaurantCard = ({
   costForTwo,
   avgRatingString,
 }) => {
+
+  const loggedInUser = useContext(UserContext);
+
+  console.log(loggedInUser);
+  
   return (
     <div className="card">
       <img src={IMG_CDN_URL + cloudinaryImageId} />
@@ -29,10 +36,9 @@ const RestaurantCard = ({
           <i className="fa-solid fa-star"></i>
           {avgRatingString}
         </h4>
-        <h4>•</h4>
         <h4>{sla?.lastMileTravelString ?? '2.0 km'}</h4>
-        <h4>•</h4>
         <h4>{costForTwo ?? '₹200 for two'}</h4>
+        <h4>{loggedInUser}</h4>
       </span>
     </div>
   );

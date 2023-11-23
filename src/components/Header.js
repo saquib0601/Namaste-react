@@ -1,7 +1,8 @@
 import { LOGO_URL  } from "../utils/constants";
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
 
@@ -9,11 +10,14 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
 
+    const loggedInUser = useContext(UserContext);
+    console.log(loggedInUser);
+
     return (
-        <div className="flex">
+        <div className="header">
             <div className="logo-container">
                 <img
-                    className="w-2"
+                    className="logo"
                     src={LOGO_URL}/>
             </div>
             <div className="nav-items">
@@ -49,6 +53,7 @@ const Header = () => {
               </button>
             )}
           </li>
+          <li>{loggedInUser}</li>
                 </ul>
             </div>
         </div>

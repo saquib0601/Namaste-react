@@ -1,0 +1,12 @@
+.headerCategory {
+    border: 1px solid grey;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 16px;
+    width: 50%;
+}
+.resTitleHeader {
+    display: flex;
+    justify-content: space-between;
+}
